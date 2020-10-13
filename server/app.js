@@ -10,12 +10,12 @@ app.use('/', express.static('./client/dist'))
 
 
 app.get('/api/productOptions/products/:id', (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
   let id = req.params.id;
-  console.log('this is id', id)
+  // console.log('this is id', id)
   db.Item.findOne({ id })
     .then((results) => {
-      console.log(results);
+      // console.log(results);
       res.json(results);
     })
     .catch((err) => {
@@ -29,7 +29,7 @@ app.patch('/api/productOptions/products/:id', (req, res) => {
 
   db.Item.findOne({ id })
     .then((item) => {
-      console.log(item.liked)
+      // console.log(item.liked)
       item.liked = !item.liked;
       item.save();
       res.json(item);
@@ -54,6 +54,13 @@ app.post('/api/productOptions/products/:id/reviews', (req, res) => {
 
 app.delete('/', (req, res) => {
   db.Item.deleteMany({})
+  .then((results) => {
+    res.json(results);
+  })
+})
+
+app.delete('/:id', (req, res) => {
+  db.Item.deleteOne({id: req.params.id})
   .then((results) => {
     res.json(results);
   })
