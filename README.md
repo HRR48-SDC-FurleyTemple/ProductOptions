@@ -68,3 +68,18 @@ This endpoint will push a new review to the reviews property of the item with th
       body: String,
       createdAt: Date,
       iRecommendThisProduct: Boolean
+
+### PUT
+A PUT request can be used to update an item with a given ID.
+
+- `/api/productOptions/products/:id`
+This endpoint will update the item with the given ID, overwriting any existing data with new data in the body of the request. Information that is not in the new request body will not be affected! This can be used to update one or more properties of an item without altering existing data beyond what a user seeks to change.
+
+### DELETE
+This API supports two different DELETE operations!
+
+- `/api/productOptions/products/:id`
+This endpoint deletes the item with the given ID.
+
+- `/api/productOptions/products/:id/ALL`
+This endpoint deletes ALL items from the database. Use with caution!
