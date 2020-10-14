@@ -127,8 +127,8 @@ Item.insertMany(createFakeData())
   .then(() => {
     Item.find({})
       .then((results) => {
-        console.log(results)
-        console.log(`${results.length} pieces of data in the database`)
+        // console.log(results)
+        // console.log(`${results.length} pieces of data in the database`)
         mongoose.connection.close()
       })
   })
