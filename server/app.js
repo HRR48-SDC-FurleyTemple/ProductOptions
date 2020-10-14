@@ -75,14 +75,14 @@ app.post('/api/productOptions/products/:id', (req, res) => {
     })
   })
 
-app.delete('/', (req, res) => {
+app.delete('/api/productOptions/products/ALL', (req, res) => {
   db.Item.deleteMany({})
   .then((results) => {
     res.json(results);
   })
 })
 
-app.delete('/:id', (req, res) => {
+app.delete('/api/productOptions/products/:id', (req, res) => {
   db.Item.deleteOne({id: req.params.id})
   .then((results) => {
     res.json(results);
