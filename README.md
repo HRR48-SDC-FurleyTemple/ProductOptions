@@ -27,17 +27,17 @@ Module that provides interfact for user to view and change product options, like
 
 There are two ways to use a GET request with this module. The first is the standard use-case, and the second will be practically meaningless in normal usage.
 
-- `/products/:id`
+- `/products/:id`\
 This endpoint will update the module with the information for the product matching the ID passed in. This includes data like size, color, reviews, etc.
 
-- `/api/productOptions/products/:id`
+- `/api/productOptions/products/:id`\
 This endpoint will directly show the JSON data of the product matching the ID passed in. This will not be useful to users and is primarily for testing.
 
 ### POST
 
 A POST request can involve either creating a new item or adding a review to an existing item.
 
-- `/api/productOptions/products/:id`
+- `/api/productOptions/products/:id`\
 This endpoint will create a new item with a specified ID. A new item should have the properties as the body of the request and match this schema:
 
       title: String,
@@ -55,7 +55,7 @@ This endpoint will create a new item with a specified ID. A new item should have
 
 Note, however, that 'id' need not be sent in the body of the request, as it pulls from the URL endpoint!
 
-- `/api/productOptions/products/:id/reviews`
+- `/api/productOptions/products/:id/reviews`\
 This endpoint will push a new review to the reviews property of the item with the matching ID. Reviews should match this schema:
 
       overallRating: { type: Number, min: 1, max: 5},
@@ -72,14 +72,14 @@ This endpoint will push a new review to the reviews property of the item with th
 ### PUT
 A PUT request can be used to update an item with a given ID.
 
-- `/api/productOptions/products/:id`
+- `/api/productOptions/products/:id`\
 This endpoint will update the item with the given ID, overwriting any existing data with new data in the body of the request. Information that is not in the new request body will not be affected! This can be used to update one or more properties of an item without altering existing data beyond what a user seeks to change.
 
 ### DELETE
 This API supports two different DELETE operations!
 
-- `/api/productOptions/products/:id`
+- `/api/productOptions/products/:id`\
 This endpoint deletes the item with the given ID.
 
-- `/api/productOptions/products/:id/ALL`
+- `/api/productOptions/products/:id/ALL`\
 This endpoint deletes ALL items from the database. Use with caution!
