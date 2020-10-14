@@ -52,6 +52,25 @@ app.post('/api/productOptions/products/:id/reviews', (req, res) => {
   })
 })
 
+app.post('/api/productOptions/products/:id', (req, res) => {
+  // find highest ID value
+  // var findQuery = db.Item.findOne({}, {_id:0}).sort('-id').select('id').exec((err, doc) => {
+
+      const { price, colors, sizes, title, description, liked, inStock, reviews } = req.body;
+      let id = req.params.id;
+      const newItem = new db.Item({ price, colors, sizes, title, description, liked, inStock, reviews, id})
+        newItem.save((err, result) => {
+          if (err) {
+            console.log(err);
+            res.json(err);
+          }
+          res.send(result);
+        })
+
+  })
+
+// })
+
 app.delete('/', (req, res) => {
   db.Item.deleteMany({})
   .then((results) => {

@@ -15,7 +15,9 @@ const reviewSchema = mongoose.Schema({
   iRecommendThisProduct: Boolean
  })
 
-const itemSchema = mongoose.Schema({
+ const itemSchema = mongoose.Schema({
+  title: String,
+  description: String,
   price: {
     originalPrice: Number,
     salePrice: Number
@@ -24,8 +26,9 @@ const itemSchema = mongoose.Schema({
   sizes: [String],
   liked: Boolean,
   inStock: Number,
-  reviews: [reviewSchema]
-})
+  reviews: [reviewSchema],
+  id: String
+ })
 
 let Item = mongoose.model('Item', itemSchema);
 
