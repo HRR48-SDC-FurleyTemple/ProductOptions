@@ -53,9 +53,9 @@ app.post('/api/productOptions/products/:id/reviews', (req, res) => {
 })
 
 app.post('/api/productOptions/products/:id', (req, res) => {
-  // find highest ID value
-  // var findQuery = db.Item.findOne({}, {_id:0}).sort('-id').select('id').exec((err, doc) => {
-
+  // find highest ID value -- does not increment properly automatically, so an id in the endpoint is necessary
+  // to properly create a new item
+  // var findQuery = db.Item.findOne({}, {_id:0}).sort('-id').select('id').exec((err, doc) => { })
       const { price, colors, sizes, title, description, liked, inStock, reviews } = req.body;
       let id = req.params.id;
       const newItem = new db.Item({ price, colors, sizes, title, description, liked, inStock, reviews, id})
@@ -66,10 +66,14 @@ app.post('/api/productOptions/products/:id', (req, res) => {
           }
           res.send(result);
         })
-
   })
 
-// })
+  app.put('/api/productOptions/products/:id', (req, res) => {
+    db.Item.findOneAndUpdate({'id': req.params.id}, {$set: req.body})
+    .then(result => {
+      res.json(result);
+    })
+  })
 
 app.delete('/', (req, res) => {
   db.Item.deleteMany({})

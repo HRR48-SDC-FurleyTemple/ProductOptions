@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/mykea', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/mykea', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 const reviewSchema = mongoose.Schema({
   overallRating: { type: Number, min: 1, max: 5},
