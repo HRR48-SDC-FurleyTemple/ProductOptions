@@ -1,6 +1,6 @@
 # Product Options
 
-Module that provides interfact for user to view and change product options, like size, quantity, color, etc.
+Module that provides an interface for a user to view and change product options, like size, quantity, color, etc.
 
 ### For a demo of the module, please see: https://recordit.co/thCIuhpfNv
 
