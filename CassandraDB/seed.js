@@ -32,14 +32,11 @@ let createTable = `CREATE TABLE IF NOT EXISTS items (
   SIZES text,
   LIKED text,
   INSTOCK int,
-  REVIEWS text,
   PRIMARY KEY (ID)
 );`
 
-// let copyCSV = "COPY mykea.items (ID,TITLE,DESC,OGPRICE,SALEPRICE,COLORS,SIZES,LIKED,INSTOCK,REVIEWS) FROM 'DataGeneration/test.csv' WITH DELIMITER=',' AND HEADER=TRUE"
-
 // paste this into cqlsh after creating the table by running the file
-// COPY mykea.items (id, title, description, ogprice, saleprice, colors, sizes, liked, instock, reviews) FROM 'DataGeneration/test.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
+// COPY mykea.items (id, title, description, ogprice, saleprice, colors, sizes, liked, instock) FROM 'DataGeneration/items.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
 
 client.execute(createTable)
   .then(result => {
