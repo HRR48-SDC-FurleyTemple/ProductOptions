@@ -6,3 +6,4 @@ DataGeneration/items.csv
 DataGeneration/reviews.csv
 DataGeneration/olddataGen.js
 LegacyDB
+server/Legacy.js

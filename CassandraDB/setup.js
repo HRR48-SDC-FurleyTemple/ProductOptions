@@ -1,27 +1,5 @@
 var client = require('./index.js');
 
-// let query1 = `CREATE KEYSPACE Mykea with replication =
-// {'class' : 'SimpleStrategy', 'replication_factor' : 1}` ;
-// client.execute(query1)
-//   .then(result => console.log('keyspace created'));
-
-// let query2 = `
-// CREATE TABLE items (
-//   itemid int,
-//   timestamp timestamp,
-//   title text,
-//   description text,
-//   colors set<text>,
-//   sizes set<text>,
-//   price map<text, int>,
-//   liked boolean,
-//   inStock int,
-//   originalPrice int,
-//   salePrice int,
-//   reviews set <frozen <map<text, >>>,
-//   PRIMARY KEY (itemid, changedate)
-// ) WITH CLUSTERING ORDER BY (timestamp DESC);`
-
 let dropItems = `DROP TABLE IF EXISTS mykea.items;`
 let dropReviews = `DROP TABLE IF EXISTS mykea.reviews;`
 
