@@ -37,16 +37,6 @@ let createItems = `CREATE TABLE IF NOT EXISTS items (
   INSTOCK int,
   PRIMARY KEY (ID)
 );`
-// let easeOfAssembly = Math.floor(Math.random() * 5 + 1);
-//   let valueForMoney = Math.floor(Math.random() * 5 + 1);
-//   let productQuality = Math.floor(Math.random() * 5 + 1);
-//   let appearance = Math.floor(Math.random() * 5 + 1);
-//   let worksAsExpected = Math.floor(Math.random() * 5 + 1);
-//   let overallRating = Math.floor((easeOfAssembly + valueForMoney + productQuality + appearance + worksAsExpected) / 5);
-//   let createdAt = faker.date.past();
-//   let iRecommendThisProduct = faker.random.boolean();
-//   let header = faker.lorem.words();
-//   let body = faker.lorem.paragraphs();
 
 let createReviews = `CREATE TABLE IF NOT EXISTS reviews (
   ID int,
