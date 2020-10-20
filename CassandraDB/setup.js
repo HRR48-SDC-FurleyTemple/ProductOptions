@@ -1,4 +1,4 @@
-var client = require('./index.js');
+const cassie = require('./index.js');
 
 let dropItems = `DROP TABLE IF EXISTS mykea.items;`
 let dropReviews = `DROP TABLE IF EXISTS mykea.reviews;`
@@ -7,50 +7,50 @@ let createItems = `CREATE TABLE IF NOT EXISTS items (
   ID int,
   TITLE text,
   DESCRIPTION text,
-  OGPRICE int,
-  SALEPRICE int,
+  "originalPrice" int,
+  "salePrice" int,
   COLORS text,
   SIZES text,
   LIKED boolean,
-  INSTOCK int,
+  "inStock" int,
   PRIMARY KEY (ID)
 );`
 
 let createReviews = `CREATE TABLE IF NOT EXISTS reviews (
   ID int,
-  EASEOFASSEMBLY int,
-  VALUEFORMONEY int,
-  PRODUCTQUALITY int,
+  "easeOfAssembly" int,
+  "valueForMoney" int,
+  "productQuality" int,
   APPEARANCE int,
-  WORKSASEXPECTED int,
-  OVERALL int,
-  CREATEDAT text,
-  RECOMMENDED boolean,
+  "worksAsExpected" int,
+  "overallRating" int,
+  "createdAt" text,
+  "iRecommendThisProduct" boolean,
   HEADER text,
   BODY text,
-  PRIMARY KEY (ID, CREATEDAT)
+  PRIMARY KEY (ID, "createdAt")
 );`
 
 // paste these lines into cqlsh after creating the tables
-// COPY mykea.items (id, title, description, ogprice, saleprice, colors, sizes, liked, instock) FROM 'DataGeneration/items.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
-// COPY mykea.reviews (id, easeofassembly, valueformoney, productquality, appearance, worksasexpected, overall, createdat, recommended, header, body) FROM 'DataGeneration/reviews.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
+// COPY mykea.items (id, title, description, "originalPrice", "salePrice", colors, sizes, liked, "inStock") FROM 'DataGeneration/items.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
+// COPY mykea.reviews (id, "easeOfAssembly", "valueForMoney", "productQuality", appearance, "worksAsExpected", "overallRating", "createdAt", "iRecommendThisProduct", header, body) FROM 'DataGeneration/reviews.csv' WITH DELIMITER=',' AND HEADER=TRUE ;
 
 
-client.execute(dropItems)
+cassie.execute(dropItems)
   .then(() => {
-    return client.execute(createItems);
+    return cassie.execute(createItems);
   })
   .then(() => {
-    return client.execute(dropReviews);
+    return cassie.execute(dropReviews);
   })
   .then(() => {
-    return client.execute(createReviews);
+    return cassie.execute(createReviews);
   })
   .then(() => {
-    return client.shutdown();
+    return cassie.shutdown();
   })
   .catch(err => {
     console.error('Problem! It\'s :', err);
-    return client.shutdown()
+    return cassie.shutdown()
     .then(() => {throw err})
   })
