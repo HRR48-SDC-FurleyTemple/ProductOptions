@@ -8,7 +8,7 @@
     "start": "node ./server/server.js",
     "nodemon": "nodemon ./server/server.js",
     "genCSV": "node ./DataGeneration/dataGen.js",
-    "cassieSeed": "node ./CassandraDB/setup.js",
+    "cassieSetup": "node ./CassandraDB/setup.js",
     "build": "webpack --watch"
   },
   "author": "August Dolan",
