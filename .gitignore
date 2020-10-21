@@ -1,4 +1,8 @@
 node_modules
 client/dist/main.js
 package-lock.json
-DataGeneration/data.csv
+DataGeneration/items.csv
+DataGeneration/reviews.csv
+DataGeneration/olddataGen.js
+LegacyDB
+server/Legacy.js
