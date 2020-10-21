@@ -3,7 +3,7 @@ const cassie = require('./index.js');
 let dropItems = `DROP TABLE IF EXISTS mykea.items;`
 let dropReviews = `DROP TABLE IF EXISTS mykea.reviews;`
 
-let createItems = `CREATE TABLE IF NOT EXISTS items (
+let createItems = `CREATE TABLE items (
   ID int,
   TITLE text,
   DESCRIPTION text,
@@ -16,7 +16,7 @@ let createItems = `CREATE TABLE IF NOT EXISTS items (
   PRIMARY KEY (ID)
 );`
 
-let createReviews = `CREATE TABLE IF NOT EXISTS reviews (
+let createReviews = `CREATE TABLE reviews (
   ID int,
   "easeOfAssembly" int,
   "valueForMoney" int,

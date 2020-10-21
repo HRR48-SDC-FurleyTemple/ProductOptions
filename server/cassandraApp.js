@@ -13,7 +13,7 @@ app.use('/', express.static('./client/dist'))
 // search down -- for example the database was explicitly seeded with 10,000,000 entries, so there's no need to look before that for unused ids
 let highest = 10000000;
 let searchForHighest = () => {
-  let tryHighest = cassie.execute(`SELECT * FROM mykea.items WHERE id = ${highest}`).then(results => results);
+  let tryHighest = cassie.execute(`SELECT * FROM mykea.items WHERE id = ${highest}`);
 
   tryHighest
   .then((results) => {
