@@ -1,4 +1,4 @@
-# New Document# Product Options
+# Product Options
 
 Module that provides an interface for a user to view and change product options, like size, quantity, color, etc.
 
