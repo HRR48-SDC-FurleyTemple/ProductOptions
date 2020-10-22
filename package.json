@@ -9,7 +9,9 @@
     "nodemon": "nodemon ./server/server.js",
     "genCSV": "node ./DataGeneration/dataGen.js",
     "cassieSetup": "node ./CassandraDB/setup.js",
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "PGSetup": "node ./PostgreSQL/setup.js",
+    "PGSeed": "node ./PostgreSQL/seed.js"
   },
   "author": "August Dolan",
   "license": "ISC",
