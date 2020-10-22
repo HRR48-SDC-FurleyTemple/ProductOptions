@@ -6,3 +6,4 @@ DataGeneration/reviews.csv
 DataGeneration/olddataGen.js
 LegacyDB
 server/Legacy.js
+PostgreSQL/info.js
