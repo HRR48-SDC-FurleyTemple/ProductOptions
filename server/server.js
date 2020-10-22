@@ -1,5 +1,6 @@
 // const app = require('./Legacy.js');
-const app = require('./CassandraApp.js');
+const app = require('./postgresApp.js');
+// const app = require('./CassandraApp.js');
 
 const port = 3000;
 app.listen(port, () => {
