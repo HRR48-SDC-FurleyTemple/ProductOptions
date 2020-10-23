@@ -7,7 +7,6 @@
     "test": "jest",
     "start": "node ./server/server.js",
     "nodemon": "nodemon ./server/server.js",
-    "genCSV": "node --experimental-worker ./DataGeneration/dataGen.js",
     "cassieSetup": "node ./CassandraDB/setup.js",
     "build": "webpack --watch",
     "PGSetup": "node ./PostgreSQL/setup.js",
