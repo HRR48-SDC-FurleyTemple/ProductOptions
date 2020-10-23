@@ -24,6 +24,13 @@ app.get('/api/productOptions/products/:id', (req, res) => {
       builtResponse.price = {originalPrice: builtResponse.originalPrice, salePrice: builtResponse.salePrice};
       delete builtResponse.originalPrice;
       delete builtResponse.salePrice;
+      for (let prop in builtResponse) {
+        if (builtResponse[prop] === null) {
+          builtResponse[prop] = 'No options provided for this product';
+        }
+      }
+      builtResponse.colors = builtResponse.colors.split(',');
+      builtResponse.sizes = builtResponse.sizes.split(',');
       return pgres.query(getReviewsQuery);
     })
     .then(result => {

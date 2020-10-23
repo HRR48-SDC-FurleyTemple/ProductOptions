@@ -7,11 +7,11 @@
     "test": "jest",
     "start": "node ./server/server.js",
     "nodemon": "nodemon ./server/server.js",
-    "genCSV": "node ./DataGeneration/dataGen.js",
     "cassieSetup": "node ./CassandraDB/setup.js",
     "build": "webpack --watch",
     "PGSetup": "node ./PostgreSQL/setup.js",
-    "PGSeed": "node ./PostgreSQL/seed.js"
+    "PGSeed": "node ./PostgreSQL/seed.js",
+    "fullSetup": "node --experimental-worker ./DataGeneration/itemsGen.js && node --experimental-worker ./DataGeneration/reviewsGen.csv && npm run PGSetup && npm run PGSeed"
   },
   "author": "August Dolan",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "faker": "^5.1.0",
     "moment": "^2.29.0",
     "mongoose": "^5.10.6",
+    "newrelic": "^6.13.2",
     "pg": "^8.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
