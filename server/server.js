@@ -1,4 +1,5 @@
-// const app = require('./Legacy.js');
+const newrelic = require('newrelic')
+
 const app = require('./postgresApp.js');
 // const app = require('./CassandraApp.js');
 
