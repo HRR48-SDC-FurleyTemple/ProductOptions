@@ -1,5 +1,8 @@
 const { Client } = require('pg');
-const info = require('./info.js'); // should refactor to use a .env file later
-const client = new Client(info.connection);
+const client = new Client({
+  host: /* HOST */,
+  user: /* USER */,
+  password: /* PW */,
+});
 
 module.exports = client;

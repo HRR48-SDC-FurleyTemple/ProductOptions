@@ -1,8 +1,7 @@
 node_modules
 client/dist/main.js
 package-lock.json
-DataGeneration/items*.csv
-DataGeneration/reviews*.csv
+*.csv
 DataGeneration/olddataGen.js
 PostgreSQL/info.js
 newrelic.js

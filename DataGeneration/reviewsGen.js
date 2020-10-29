@@ -70,7 +70,7 @@ const createFakeReviews = () => {
   do {
     let reviewsArr = [];
 
-    for (let i = 0; i < Math.floor(Math.random() * 8) + 1; i++) {
+    for (let i = 0; i < Math.floor(Math.random() * 10) + 1; i++) {
       let easeOfAssembly = Math.floor(Math.random() * 5 + 1);
       let valueForMoney = Math.floor(Math.random() * 5 + 1);
       let productQuality = Math.floor(Math.random() * 5 + 1);

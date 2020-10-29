@@ -1,10 +1,9 @@
 node_modules
-client/dist/main.js
 package-lock.json
-DataGeneration/items*.csv
-DataGeneration/reviews*.csv
-DataGeneration/olddataGen.js
+DataGeneration
 PostgreSQL/info.js
-newrelic.js
 newrelic_agent.log
+newrelic.js
 tests.js
+PostgreSQL/seed.js
+PostgreSQL/setup.js
