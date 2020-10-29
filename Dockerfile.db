@@ -1,0 +1,10 @@
+
+FROM postgres
+ENV POSTGRES_PASSWORD postgres
+ENV DATABASE_URL: postgres://username:pgpassword@db:5432/mydatabase
+WORKDIR /usr/src/app
+# COPY DataGeneration/items* .
+# COPY DataGeneration/reviews* .
+COPY init.sql /docker-entrypoint-initdb.d/
+
+

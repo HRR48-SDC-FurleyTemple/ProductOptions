@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+DataGeneration
+PostgreSQL/info.js
+newrelic_agent.log
+newrelic.js
+tests.js
+PostgreSQL/seed.js
+PostgreSQL/setup.js

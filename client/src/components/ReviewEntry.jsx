@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import ReviewBar from './mini-components/ReviewBar.jsx';
 import ReviewsOverview from './mini-components/ReviewsOverview.jsx';
-import moment from 'moment';
 
 const ScoreAverage = styled.div`
   display: grid;
@@ -69,7 +68,7 @@ const ReviewEntry = (props) => {
     <Entry>
       <Header>
         <ReviewsOverview overallRating={review.overallRating} />
-        <Created>{moment(review.createdAt).calendar()}</Created>
+        <Created>{review.createdAt}</Created>
       </Header>
       <Title>{review.header}</Title>
       <Body>{review.body}</Body>
