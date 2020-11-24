@@ -74,7 +74,7 @@ A PUT request can be used to update an item with a given ID.
 This endpoint will update the item with the given ID, overwriting any existing data with new data in the body of the request. Think of this as a replacement/overwrite. A fully valid product must be sent for the update to be successful.
 
 ### DELETE
-~~This API supports two different DELETE operations!~~ The current form of this API supports only the ability to delete a single item at a time. Given the size of the database, a deletion of over tens of millions of items would be time-consuming, and re-seeding would be extremely time consuming.
+~~This API supports two different DELETE operations!~~ The current form of this API supports only the ability to delete a single item at a time. Given the size of the database, a deletion of over tens of millions of items would be time-consuming, so intentionally deleting all records must be done within database.
 
 - `/api/productOptions/products/:id`\
 This endpoint deletes the item with the given ID.
